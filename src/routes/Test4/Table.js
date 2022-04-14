@@ -1,6 +1,6 @@
-// import DATA from "./_data";
+import { useState, useEffect } from 'react';
 
-const Table = () => {
+const Table = ({ data }) => {
   return (
     <table>
       <thead>
@@ -10,8 +10,17 @@ const Table = () => {
           <th>Address</th>
         </tr>
       </thead>
+      <tbody>
+        {data.map((el) => (
+          <tr key={el.name + el.address}>
+            <td>{el.name}</td>
+            <td>{el.age}</td>
+            <td>{el.address}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
-  )
-}
+  );
+};
 
 export default Table;
