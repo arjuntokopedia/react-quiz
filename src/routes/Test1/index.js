@@ -14,6 +14,7 @@ const Test1 = () => {
         type="text"
         placeholder="input here"
         onChange={(e) => setInput(e.target.value)}
+        value={input}
       />
     </div>
   );

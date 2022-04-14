@@ -14,16 +14,24 @@ const cssLabel = css({
     padding: 0,
     border: 'none',
     outline: 'none',
-  }
-})
+    visibility: 'hidden',
+  },
+  ':hover': {
+    button: {
+      visibility: 'visible',
+    },
+  },
+});
 
-const Label = () => {
+const Label = ({ value, onClick }) => {
   return (
     <span className={cssLabel}>
-      RENDER VALUE HERE
-      <button type="button">⊗</button>
+      {value}
+      <button type="button" onClick={onClick}>
+        ⊗
+      </button>
     </span>
-  )
-}
+  );
+};
 
 export default Label;
