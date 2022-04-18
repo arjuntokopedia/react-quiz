@@ -1,15 +1,21 @@
-import { cssModal } from "./style"
+import { initialInput } from '.';
+import { cssModal } from './style';
 
-const Modal = () => {
+const Modal = ({ value, setShowModal, setInputValue }) => {
+  const handleHideModal = () => {
+    setShowModal(false);
+    setInputValue(initialInput);
+  };
+
   return (
     <div className={cssModal}>
-      Name: _____
-      <br/>
-      Age: _____
-      <br/>
-      Address: _____
-      <br/>
-      <button>Reset</button>
+      Name: {value.name}
+      <br />
+      Age: {value.age}
+      <br />
+      Address: {value.address}
+      <br />
+      <button onClick={handleHideModal}>Reset</button>
     </div>
   );
 };
