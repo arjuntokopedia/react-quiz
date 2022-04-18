@@ -1,6 +1,17 @@
-import DATA from "./_data";
+import { useMemo } from 'react';
+
+import { useInput } from './inputContext';
+import DATA from './_data';
 
 const Table = () => {
+  const [input] = useInput();
+
+  const memoizedData = useMemo(() => {
+    return DATA.filter((el) =>
+      el.name.toLocaleLowerCase().includes(input.toLocaleLowerCase())
+    );
+  }, [input]);
+
   return (
     <table>
       <thead>
@@ -11,7 +22,7 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {DATA.map((eachrow, idx) => (
+        {memoizedData.map((eachrow, idx) => (
           <tr key={idx}>
             <td>{eachrow.name}</td>
             <td>{eachrow.age}</td>
@@ -20,7 +31,7 @@ const Table = () => {
         ))}
       </tbody>
     </table>
-  )
-}
+  );
+};
 
 export default Table;
