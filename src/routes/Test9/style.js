@@ -7,7 +7,7 @@ export const cssSpace = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: 'black',
+  // backgroundColor: 'black',
 });
 
 export const cssSun = css({
@@ -17,9 +17,10 @@ export const cssSun = css({
   borderRadius: 40,
 });
 
-export const cssPlanet = () => css({
-  width: 20,
-  height: 20,
-  borderRadius: 10,
-  backgroundColor: 'red',
-});
+export const cssPlanet = () =>
+  css({
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    backgroundColor: 'red',
+  });
